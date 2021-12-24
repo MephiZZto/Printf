@@ -1,10 +1,11 @@
 test
 ft_printf.o
-ft_putchar_fd.o
-ft_puthex_fd.o
-ft_putlongnbr_fd.o
-ft_putnbr_fd.o
-ft_putstr_fd.o
 ft_strlen.o
 libftprintf.a
 printfTester
+ft_putchar.o
+ft_puthex.o
+ft_putlongnbr.o
+ft_putnbr.o
+ft_putstr.o
+ft_numlen.o
