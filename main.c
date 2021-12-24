@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:18:46 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/23 14:47:34 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/24 10:50:01 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,20 @@ int	ft_num_args(const char *s)
 int	main(void)
 {
 	unsigned int number = 4294967295;
+	int	strlen;
 	char *ptr;
 
-	ft_printf("dosfirst value: %p second value: %u\n", &ptr, number);
-	printf("dosfirst value: %p second value: %u\n", &ptr, number);
-	ft_printf("%c", '0');
+	//ft_printf("dosfirst value: %p second value: %u\n", &ptr, number);
+	//printf("dosfirst value: %p second value: %u\n", &ptr, number);
+	
+	
+	//strlen = printf("%x\n", 87123978);
+	//printf("%i\n", strlen);
+	strlen = ft_printf("%X\n", 234245234);
+	//ft_printf("%i\n", strlen);
 	return (0);
-}
+}/*
+531680a
+8
+
+*/

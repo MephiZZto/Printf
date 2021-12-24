@@ -6,14 +6,14 @@
 #    By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/23 10:07:39 by dborgard          #+#    #+#              #
-#    Updated: 2021/12/23 14:43:12 by dborgard         ###   ########.fr        #
+#    Updated: 2021/12/24 10:19:22 by dborgard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libftprintf.a
 
-SRCS		=	ft_printf.c ft_putchar_fd.c ft_puthex_fd.c ft_putlongnbr_fd.c \
-				ft_putnbr_fd.c ft_putstr_fd.c ft_strlen.c
+SRCS		=	ft_printf.c ft_putchar.c ft_puthex.c ft_putnbr.c \
+				ft_putstr.c ft_strlen.c ft_numlen.c
 
 OBJS		=	$(SRCS:.c=.o)
 

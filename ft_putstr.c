@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 09:32:38 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/23 14:17:06 by dborgard         ###   ########.fr       */
+/*   Created: 2021/11/30 09:23:51 by dborgard          #+#    #+#             */
+/*   Updated: 2021/12/24 09:19:41 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+long	ft_putstr(char *s)
 {
-	long	ln;
+	long len;
 
-	ln = n;
-	if (ln < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ln = ln * -1;
-	}
-	if (ln <= 9)
-		ft_putchar_fd(ln + '0', fd);
-	else
-	{
-		ft_putnbr_fd(ln / 10, fd);
-		ft_putnbr_fd(ln % 10, fd);
-	}
+	len = ft_strlen(s);
+	if (!s)
+		return (0);
+	write(1, s, len);
+	return (len);
 }

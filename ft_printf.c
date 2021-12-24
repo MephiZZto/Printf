@@ -6,33 +6,36 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:17:18 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/23 14:16:52 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/24 10:50:51 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_format(const char f, va_list	args)
+static int	ft_format(const char f, va_list	args)
 {
+	int	strlen;
+
 	if (f == 'c')
-		ft_putchar_fd(va_arg(args, int), 1);
+		strlen = ft_putchar(va_arg(args, int));
 	else if (f == 's')
-		ft_putstr_fd(va_arg(args, char *), 1);
+		strlen = ft_putstr(va_arg(args, char *));
 	else if (f == '%')
-		ft_putchar_fd('%', 1);
-	else if (f == 'd' || f == 'i')
-		ft_putnbr_fd(va_arg(args, int), 1);
+		strlen = ft_putchar('%');
+	if (f == 'd' || f == 'i')
+		strlen = ft_putnbr(va_arg(args, int));
 	else if (f == 'u')
-		ft_putlongnbr_fd(va_arg(args, unsigned int), 1);
+		strlen = ft_putnbr((long) va_arg(args, unsigned int));
 	else if (f == 'x')
-		ft_puthex_fd(va_arg(args, long), 1, 0);
+		strlen = ft_puthex(va_arg(args, long), 0);
 	else if (f == 'X')
-		ft_puthex_fd(va_arg(args, long), 1, 1);
+		strlen = ft_puthex(va_arg(args, long), 1);
 	else if (f == 'p')
 	{
-		ft_putstr_fd("0x", 1);
-		ft_puthex_fd(va_arg(args, long), 1, 0);
+		strlen = ft_putstr("0x");
+		strlen = strlen + ft_puthex(va_arg(args, long), 0);
 	}
+	return (strlen - 2);
 }
 
 int	ft_printf(const char *arg_string, ...)
@@ -40,6 +43,7 @@ int	ft_printf(const char *arg_string, ...)
 	va_list	args;
 	int		i;
 	int		len;
+	int		strlen;
 
 	va_start(args, arg_string);
 	len = ft_strlen(arg_string);
@@ -48,15 +52,15 @@ int	ft_printf(const char *arg_string, ...)
 	{
 		if (arg_string[i] != '%')
 		{
-			ft_putchar_fd(arg_string[i], 1);
+			ft_putchar(arg_string[i]);
 		}
 		else
 		{
 			i++;
-			ft_format(arg_string[i], args);
+			strlen = ft_format(arg_string[i], args);
 		}
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (i + strlen);
 }
