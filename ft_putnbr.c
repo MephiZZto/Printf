@@ -6,15 +6,15 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:32:38 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/24 10:24:29 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/25 11:53:48 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_printnbr(long n, int div)
+static void	ft_printnbr(unsigned long n, unsigned long div)
 {
-	while (n > 9)
+	while (div >= 10)
 	{
 		ft_putchar((n / div) + '0');
 		n = n % div;
@@ -25,22 +25,24 @@ static void	ft_printnbr(long n, int div)
 
 int	ft_putnbr(long n)
 {
-	int		i;
-	int		len;
-	int		div;
+	int				i;
+	int				len;
+	unsigned long	number;
+	unsigned long	div;
 
 	len = 0;
 	if (n < 0)
 	{
-		len = len + ft_putchar('-');
-		n = n * -1;
-		len = 1;
+		len = ft_putchar('-');
+		number = n * -1;
 	}
-	i = ft_numlen(n, 10);
+	else
+		number = n;
+	i = ft_numlen(number, 10);
 	len = len + i;
-	div = 10;
-	while (i-- > 2)
+	div = 1;
+	while (i-- > 1)
 		div = div * 10;
-	ft_printnbr(n, div);
+	ft_printnbr(number, div);
 	return (len);
 }

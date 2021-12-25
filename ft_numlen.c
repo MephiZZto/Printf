@@ -6,11 +6,11 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 09:43:32 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/24 10:18:38 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/25 10:48:20 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_numlen(long n, int base)
+int	ft_numlen(unsigned long n, int base)
 {
 	int	i;
 

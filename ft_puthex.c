@@ -6,15 +6,15 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:06:08 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/24 10:50:04 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/25 10:48:12 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_printnbr(long n, int div, int upper)
+static void	ft_printnbr(unsigned long n, unsigned long div, int upper)
 {
-	while (n > 15)
+	while (div >= 16)
 	{
 		if ((n / div) > 9)
 		{
@@ -39,11 +39,11 @@ static void	ft_printnbr(long n, int div, int upper)
 		ft_putchar(n + '0');
 }
 
-int	ft_puthex(long n, int upper)
+int	ft_puthex(unsigned long n, int upper)
 {
-	int		i;
-	int		len;
-	int		div;
+	int				i;
+	int				len;
+	unsigned long	div;
 
 	len = 0;
 	if (n < 0)
@@ -53,10 +53,9 @@ int	ft_puthex(long n, int upper)
 		len = 1;
 	}
 	i = ft_numlen(n, 16);
-	printf("%i\n", i);
 	len = len + i;
-	div = 16;
-	while (i-- > 2)
+	div = 1;
+	while (i-- > 1)
 		div = div * 16;
 	ft_printnbr(n, div, upper);
 	return (len);

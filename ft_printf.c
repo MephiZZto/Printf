@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:17:18 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/24 10:50:51 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/25 11:53:20 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 static int	ft_format(const char f, va_list	args)
 {
 	int	strlen;
+	unsigned long tmp;
 
+	strlen = 0;
 	if (f == 'c')
 		strlen = ft_putchar(va_arg(args, int));
 	else if (f == 's')
@@ -23,18 +25,15 @@ static int	ft_format(const char f, va_list	args)
 	else if (f == '%')
 		strlen = ft_putchar('%');
 	if (f == 'd' || f == 'i')
-		strlen = ft_putnbr(va_arg(args, int));
+		strlen = ft_putnbr(va_arg(args, long));
 	else if (f == 'u')
-		strlen = ft_putnbr((long) va_arg(args, unsigned int));
+		strlen = ft_putnbr(va_arg(args, long));
 	else if (f == 'x')
-		strlen = ft_puthex(va_arg(args, long), 0);
+		strlen = ft_puthex(va_arg(args, unsigned int), 0);
 	else if (f == 'X')
-		strlen = ft_puthex(va_arg(args, long), 1);
+		strlen = ft_puthex(va_arg(args, unsigned int), 1);
 	else if (f == 'p')
-	{
-		strlen = ft_putstr("0x");
-		strlen = strlen + ft_puthex(va_arg(args, long), 0);
-	}
+		strlen = ft_putmem(va_arg(args, long));
 	return (strlen - 2);
 }
 
@@ -48,6 +47,7 @@ int	ft_printf(const char *arg_string, ...)
 	va_start(args, arg_string);
 	len = ft_strlen(arg_string);
 	i = 0;
+	strlen = 0;
 	while (i < len)
 	{
 		if (arg_string[i] != '%')
@@ -57,7 +57,7 @@ int	ft_printf(const char *arg_string, ...)
 		else
 		{
 			i++;
-			strlen = ft_format(arg_string[i], args);
+			strlen = strlen + ft_format(arg_string[i], args);
 		}
 		i++;
 	}
