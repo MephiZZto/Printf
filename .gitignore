@@ -10,3 +10,4 @@ ft_putnbr.o
 ft_putstr.o
 ft_numlen.o
 ft_putmem.o
+ft_putunsnbr.o

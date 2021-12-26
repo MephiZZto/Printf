@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putunsnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 09:32:38 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/26 10:39:44 by dborgard         ###   ########.fr       */
+/*   Created: 2021/12/26 10:35:34 by dborgard          #+#    #+#             */
+/*   Updated: 2021/12/26 10:37:00 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_printnbr(unsigned long n, unsigned long div)
 	ft_putchar(n + '0');
 }
 
-int	ft_putnbr(long long int n)
+int	ft_putunsnbr(long n)
 {
 	int				i;
 	int				len;

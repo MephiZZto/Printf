@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:17:18 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/25 11:53:20 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/26 10:40:22 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static int	ft_format(const char f, va_list	args)
 {
 	int	strlen;
-	unsigned long tmp;
 
 	strlen = 0;
 	if (f == 'c')
@@ -27,7 +26,7 @@ static int	ft_format(const char f, va_list	args)
 	if (f == 'd' || f == 'i')
 		strlen = ft_putnbr(va_arg(args, long));
 	else if (f == 'u')
-		strlen = ft_putnbr(va_arg(args, long));
+		strlen = ft_putunsnbr(va_arg(args, long));
 	else if (f == 'x')
 		strlen = ft_puthex(va_arg(args, unsigned int), 0);
 	else if (f == 'X')
