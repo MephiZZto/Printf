@@ -6,13 +6,13 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:32:38 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/26 10:39:44 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/27 09:17:07 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_printnbr(unsigned long n, unsigned long div)
+static void	ft_printnbr(unsigned long long int n, unsigned long long int div)
 {
 	while (div >= 10)
 	{
@@ -25,10 +25,10 @@ static void	ft_printnbr(unsigned long n, unsigned long div)
 
 int	ft_putnbr(long long int n)
 {
-	int				i;
-	int				len;
-	unsigned long	div;
-	unsigned long	num;
+	int						i;
+	int						len;
+	unsigned long long int	div;
+	unsigned long long int	num;
 
 	len = 0;
 	if (n < 0)
