@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putmem.c                                        :+:      :+:    :+:   */
+/*   ft_puthexad.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 10:57:48 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/25 11:08:00 by dborgard         ###   ########.fr       */
+/*   Updated: 2021/12/28 19:15:26 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putmem(unsigned long n)
+int	ft_puthexad(unsigned long n)
 {
 	int	len;
 

@@ -1,3 +1,4 @@
+.gitignore
 test
 ft_printf.o
 ft_strlen.o
