@@ -13,3 +13,4 @@ ft_numlen.o
 ft_putmem.o
 ft_putunsnbr.o
 ft_puthexad.o
+main.c
