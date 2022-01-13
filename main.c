@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:18:46 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/27 09:30:17 by dborgard         ###   ########.fr       */
+/*   Updated: 2022/01/13 10:48:28 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ int	main(void)
 	test = -14;
 	//ft_printf("dosfirst value: %p second value: %u\n", &ptr, number);
 	//printf("dosfirst value: %p second value: %u\n", &ptr, number);
-	
-	
-	strlen = printf(" %u ", test);
+	strlen = printf(" %u% %u %u", test, test);
 	//printf("\nString Length: %i\n", strlen);
-	strlen = ft_printf(" %u ", test);
+	//strlen = ft_printf(" %u% %u ", test, test);
 	//ft_printf("\nString Length: %i\n", strlen);
 	return (0);
 }
