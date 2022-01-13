@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:23:51 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/27 09:30:26 by dborgard         ###   ########.fr       */
+/*   Updated: 2022/01/13 09:39:53 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long	ft_putstr(char *s)
 {
-	long len;
+	long	len;
 
 	if (s == NULL)
 	{
