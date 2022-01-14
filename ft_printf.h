@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:13:17 by dborgard          #+#    #+#             */
-/*   Updated: 2022/01/14 09:36:14 by dborgard         ###   ########.fr       */
+/*   Updated: 2022/01/14 10:26:14 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int		ft_putchar(char c);
 long	ft_putstr(char *s);
 int		ft_putnbr(long long int n);
 int		ft_puthex(unsigned long n, int upper);
-int		ft_puthexad(unsigned long n);
+int		ft_puthexadd(unsigned long n);
 
 #endif
