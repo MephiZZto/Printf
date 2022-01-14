@@ -1,49 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_dividing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 09:32:38 by dborgard          #+#    #+#             */
+/*   Created: 2021/12/24 09:43:32 by dborgard          #+#    #+#             */
 /*   Updated: 2022/01/14 09:36:14 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-static void	ft_printnbr(unsigned long long int n, unsigned long long int div)
+int	ft_dividing(unsigned long n, int base)
 {
-	while (div >= 10)
-	{
-		ft_putchar((n / div) + '0');
-		n = n % div;
-		div = div / 10;
-	}
-	ft_putchar(n + '0');
-}
+	int	i;
 
-int	ft_putnbr(long long int n)
-{
-	int						i;
-	int						len;
-	unsigned long long int	div;
-	unsigned long long int	num;
-
-	len = 0;
-	if (n < 0)
+	i = 0;
+	while (n > (base - 1))
 	{
-		len = len + ft_putchar('-');
-		num = n * -1;
-		len = 1;
+		n = n / base;
+		i++;
 	}
-	else
-		num = n;
-	i = ft_dividing(num, 10);
-	len = len + i;
-	div = 1;
-	while (i-- > 1)
-		div = div * 10;
-	ft_printnbr(num, div);
-	return (len);
+	return (i + 1);
 }

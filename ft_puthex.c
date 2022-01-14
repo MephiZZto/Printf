@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:06:08 by dborgard          #+#    #+#             */
-/*   Updated: 2021/12/25 10:48:12 by dborgard         ###   ########.fr       */
+/*   Updated: 2022/01/14 09:36:14 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,13 @@ int	ft_puthex(unsigned long n, int upper)
 		n = n * -1;
 		len = 1;
 	}
-	i = ft_numlen(n, 16);
+	i = ft_dividing(n, 16);
 	len = len + i;
 	div = 1;
 	while (i-- > 1)
 		div = div * 16;
+	if (upper == 2)
+		len = len + ft_putstr("0x");
 	ft_printnbr(n, div, upper);
 	return (len);
 }
