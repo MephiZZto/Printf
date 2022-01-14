@@ -14,3 +14,4 @@ ft_putmem.o
 ft_putunsnbr.o
 ft_puthexad.o
 main.c
+ft_dividing.o

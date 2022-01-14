@@ -6,7 +6,7 @@
 /*   By: dborgard <dborgard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:17:18 by dborgard          #+#    #+#             */
-/*   Updated: 2022/01/13 10:41:13 by dborgard         ###   ########.fr       */
+/*   Updated: 2022/01/13 11:22:41 by dborgard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_format(const char f, va_list	args)
 	else if (f == 'X')
 		strlen = ft_puthex(va_arg(args, unsigned int), 1);
 	else if (f == 'p')
-		strlen = ft_puthexad(va_arg(args, unsigned long int));
+		strlen = ft_puthex(va_arg(args, unsigned long int), 2);
 	return (strlen - 2);
 }
 
